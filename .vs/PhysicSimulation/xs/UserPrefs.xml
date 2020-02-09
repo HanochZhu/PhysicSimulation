@@ -3,7 +3,9 @@
     <Files>
       <File FileName="Assets/Scripts/TestPhysic/TestRope.cs" Line="53" Column="1" />
       <File FileName="Assets/Scripts/Physic/PhysicUtils.cs" Line="36" Column="1" />
-      <File FileName="Assets/Scripts/TestCloth/SpringNode.cs" Line="5" Column="13" />
+      <File FileName="Assets/Scripts/TestCloth/SpringNode.cs" Line="17" Column="28" />
+      <File FileName="Assets/Scripts/TestCloth/ClothComponent.cs" Line="19" Column="9" />
+      <File FileName="Assets/Scripts/Physic/SpringUtils.cs" Line="8" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
