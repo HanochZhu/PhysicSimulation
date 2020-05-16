@@ -14,7 +14,7 @@ rest length : 1
 grivaty value : -9.8
 air resistance factor: 0.05
 
-![RopeEuler](https://github.com/HanochZhu/PhysicSimulation/blob/master/Image/RopeSimulation.gif)
+![Image text](https://github.com/HanochZhu/PhysicSimulation/blob/master/Image/RopeSimulation.gif)
 
 ### Verlet Method Result
-![RopeVerlet](https://github.com/HanochZhu/PhysicSimulation/blob/master/Image/RopeSimulationVerlet.gif)
+![Image text](https://github.com/HanochZhu/PhysicSimulation/blob/master/Image/RopeSimulationVerlet.gif)
