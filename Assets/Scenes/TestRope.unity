@@ -671,10 +671,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gravity: {x: 0, y: -9.8, z: 0}
   Springk: 100
-  AirBumpFactor: 0.5
+  AirResistanceFactor: 0.005
   SpingRestLength: 2
   Masses: []
-  MethodType: 0
+  MethodType: 1
 --- !u!4 &1409159715
 Transform:
   m_ObjectHideFlags: 0

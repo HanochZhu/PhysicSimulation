@@ -54,11 +54,14 @@ public class Rope : MonoBehaviour
         }
         else
         {
-
+            VerletMathod(Time.fixedDeltaTime);
         }
     }
 
     // Euler
+    // Most integral mathod have convergance feature
+    // So In Explicit Euler Mathod , 
+    // I give a air resistance to speed up the aconvergance
     public void ExplicitEulerMathod(float deltaTime)
     {
         foreach (var item in Springs)
@@ -83,6 +86,48 @@ public class Rope : MonoBehaviour
                 item.Position += item.Velocity * deltaTime;
             }
             item.Force = Vector3.zero;
+        }
+    }
+
+    // Verlet mathod
+    // 
+    public void VerletMathod(float deltaTime)
+    {
+        // first , get the final position of mass
+        // second , constraint the positon to the rest length
+
+        foreach (var item in Masses)
+        {
+            if (!item.isPined)
+            {
+                Vector3 tempPosition = item.Position;
+
+                item.Force = Gravity;
+                
+                item.Position += (1f - AirResistanceFactor) * (item.Position - item.LastPosition) + (item.Force / item.MassValue) * deltaTime * deltaTime;
+
+                item.LastPosition = tempPosition;
+            }
+        }
+        foreach (var item in Springs)
+        {
+            Vector3 subtract = item.Mass1.Position - item.Mass2.Position;
+            subtract = subtract.normalized * (subtract.magnitude - item.RestLength);
+
+            if (item.Mass1.isPined)
+            {
+                item.Mass2.Position += subtract;
+            }
+            else if (item.Mass2.isPined)
+            {
+                item.Mass1.Position -= subtract;
+            }
+            else
+            {
+                item.Mass1.Position -= subtract/2.0f;
+                item.Mass2.Position += subtract/2.0f;
+            }
+            Debug.DrawLine(item.Mass1.Position, item.Mass2.Position);
         }
     }
 }
