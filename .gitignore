@@ -4,3 +4,4 @@ obj/
 Logs/
 *.sln
 *.csproj
+.vs/

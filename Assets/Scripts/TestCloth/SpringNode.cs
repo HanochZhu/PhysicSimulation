@@ -8,16 +8,6 @@ public enum NodeType
     Node   // flexible node
 }
 
-/// <summary>
-/// 单个Spring的对象
-/// </summary>
-public class Spring
-{
-    public SpringNode node1;
-    public SpringNode node2;
-
-}
-
 public class SpringNode : MonoBehaviour
 {
     public NodeType nodeType;
