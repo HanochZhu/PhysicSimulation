@@ -12,7 +12,8 @@ public class Rope : MonoBehaviour
 {
     public Vector3 Gravity;
     public float Springk;
-    public float AirBumpFactor;
+    public float AirResistanceFactor;
+    public float SpingRestLength;
 
 
     public List<Mass> Masses;
@@ -40,7 +41,7 @@ public class Rope : MonoBehaviour
             s.Mass1 = Masses[i - 1];
             s.Mass2 = Masses[i];
             s.KValue = Springk;
-            s.RestLength = (s.Mass1.Position - s.Mass2.Position).magnitude;
+            s.RestLength = float.Equals(SpingRestLength, 0) ? (s.Mass1.Position - s.Mass2.Position).magnitude: SpingRestLength;
             Springs.Add(s);
         }
     }
@@ -76,7 +77,7 @@ public class Rope : MonoBehaviour
             if (!item.isPined)
             {
                 item.Force += Gravity;
-                item.Force -= item.Velocity * AirBumpFactor;
+                item.Force -= item.Velocity * AirResistanceFactor;
 
                 item.Velocity += (item.Force / item.MassValue) * deltaTime;
                 item.Position += item.Velocity * deltaTime;

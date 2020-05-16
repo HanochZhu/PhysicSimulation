@@ -8,6 +8,7 @@ public class Mass:MonoBehaviour
 
     public bool isPined;
 
+    [HideInInspector]
     public Vector3 startPosition;
 
     public Vector3 Position
@@ -21,11 +22,13 @@ public class Mass:MonoBehaviour
             transform.position = value;
         }
     }
-
+    [HideInInspector]
     public Vector3 LastPosition;
 
+    [HideInInspector]
     public Vector3 Force;
 
+    [HideInInspector]
     public Vector3 Velocity;
 
 }
